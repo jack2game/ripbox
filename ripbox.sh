@@ -7,7 +7,7 @@ sudo apt-get -y install autocutsel
 sudo apt-get -y install gnome-core
 sudo apt-get -y install gnome-panel
 sudo apt-get -y install gnome-themes-standard
-sudo apt-get -y install vnc4server
+sudo apt-get -y install tightvncserver
 touch ~/.Xresources
 vncserver
 sleep 5
