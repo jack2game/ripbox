@@ -45,7 +45,7 @@ sudo apt-get -y install libmpv-dev
 sudo apt-get -y install tesseract-ocr
 sudo apt-get -y install ffmpeg
 mkdir ~/.config/rclone/
-mv ~/rclone.conf ~/.config/rclone/
+cp ~/rclone.conf ~/.config/rclone/
 rclone copy remote1:/RexBackup/EncodeLinux/ ~/Desktop/Encode/ --verbose
 
 cat > ~/subtitleedit.sh <<EOF
