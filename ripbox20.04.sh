@@ -2,6 +2,12 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install software-properties-common
 sudo apt-get -y install nano
+sudo apt-get -y install gnome-shell
+sudo apt-get -y install ubuntu-gnome-desktop
+sudo apt-get -y install autocutsel
+sudo apt-get -y install gnome-core
+sudo apt-get -y install gnome-panel
+sudo apt-get -y install gnome-themes-standard
 sudo apt-get -y install tightvncserver
 touch ~/.Xresources
 vncserver -kill :1
@@ -10,9 +16,15 @@ sleep 5
 vncserver -kill :1
 
 cat > ~/.vnc/xstartup <<EOF
-#!/bin/bash
+#!/bin/sh
+autocutsel -fork
 xrdb $HOME/.Xresources
-startxfce4 &
+xsetroot -solid grey
+export XKL_XMODMAP_DISABLE=1
+export XDG_CURRENT_DESKTOP="GNOME-Flashback:Unity"
+export XDG_MENU_PREFIX="gnome-flashback-"
+unset DBUS_SESSION_BUS_ADDRESS
+gnome-session --session=gnome-flashback-metacity --disable-acceleration-check --debug &amp;
 EOF
 
 vncserver -geometry 1920x1080
