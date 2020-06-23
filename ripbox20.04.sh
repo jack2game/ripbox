@@ -38,10 +38,9 @@ sudo apt-get -y install ffmpeg
 mkdir ~/.config/rclone/
 cp ~/rclone.conf ~/.config/rclone/
 rclone copy remote1:/RexBackup/EncodeLinux/ ~/Desktop/Encode/ --verbose
-
-cat > ~/subtitleedit.sh <<EOF
-#!/bin/bash
-mono ~/Encode/SE3516/SubtitleEdit.exe
-EOF
+sudo dpkg --add-architecture i386
+wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
+sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
+sudo apt -y install --install-recommends winehq-stable
 
 sudo apt -y autoremove
