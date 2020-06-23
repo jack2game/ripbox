@@ -3,7 +3,10 @@ sudo apt-get -y upgrade
 sudo apt-get -y install software-properties-common
 sudo apt-get -y install nano
 sudo apt update
-sudo apt install xfce4 xfce4-goodies
+sudo apt -y install xfce4 xfce4-goodies
+31
+1
+1
 sudo apt -y install tightvncserver
 touch ~/.Xresources
 vncserver -kill :1
