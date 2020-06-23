@@ -2,7 +2,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install software-properties-common
 sudo apt-get -y install nano
-sudo apt-get -y install tightvncserver
+sudo apt-get install tightvncserver
 touch ~/.Xresources
 vncserver -kill :1
 vncserver
