@@ -27,7 +27,7 @@ sudo wget -q -O - https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt | sudo ap
 sudo apt update
 sudo apt -y install mkvtoolnix mkvtoolnix-gui
 sudo add-apt-repository ppa:videolan/master-daily -y
-sudo apt-get -y update
+sudo apt update
 sudo apt -y install vlc
 sudo apt-get -y install mono-complete
 sudo apt-get -y install libhunspell-dev
