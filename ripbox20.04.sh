@@ -6,6 +6,7 @@ sudo apt update
 sudo apt -y install xfce4 xfce4-goodies
 sudo apt -y install tightvncserver
 touch ~/.Xresources
+vncserver -kill :1
 vncserver
 sleep 5
 vncserver -kill :1
