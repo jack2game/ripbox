@@ -71,17 +71,18 @@ sudo apt -y install --install-recommends winehq-stable
 sudo apt-get -y install libopus-dev libopus0 opus-tools
 sudo apt-get -y install fdkaac
 
-/usr/bin/expect -c '	
-set timeout -1	
-spawn sudo update-alternatives --config x-terminal-emulator	
-expect "type selection number:"	
-send -- "2\r"	
-expect eof	
-'
-
 mkdir ~/.config/rclone/
 cp ~/rclone.conf ~/.config/rclone/
 rclone copy remote1:/RexBackup/EncodeLinux/ ~/Desktop/Encode/ --verbose
+sudo chmod +x ~/Desktop/Encode/BDSup2Sub512/BDSup2Sub512.jar
 
 sudo apt -y install firefox
 sudo apt -y autoremove
+
+/usr/bin/expect -c '
+spawn sudo update-alternatives --config x-terminal-emulator
+match_max 100000
+expect "type selection number:"
+send -- "2\r"
+expect eof
+/
