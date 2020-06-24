@@ -6,6 +6,7 @@ sudo apt-get -y install software-properties-common
 sudo apt-get -y install nano
 sudo apt-get -y install expect
 sudo apt-get -y install expect-dev
+sudo apt-get -y install autocutsel
 sudo apt -y update
 sudo apt -y upgrade
 
@@ -42,6 +43,7 @@ vncserver -kill :1
 
 cat > ~/.vnc/xstartup <<EOF
 #!/bin/bash
+autocutsel -fork
 xrdb $HOME/.Xresources
 startxfce4 &
 EOF
