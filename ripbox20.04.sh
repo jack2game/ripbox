@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install software-properties-common
@@ -5,35 +6,11 @@ sudo apt-get -y install nano
 sudo apt-get -y install expect
 sudo apt-get -y install expect-dev
 sudo apt update
-
-set timeout -1
-spawn sudo apt install xfce4 xfce4-goodies
-match_max 100000
-expect "Do you want to continue?"
-send -- "y\r"
-expect "Country of origin for the keyboard:"
-send -- "31\r"
-expect "Keyboard layout:"
-send -- "1\r"
-expect "Default display manager:"
-send -- "1\r
-expect eof
-
+sudo apt -y install xfce4 xfce4-goodies
 sudo apt -y install tightvncserver
 touch ~/.Xresources
 vncserver -kill :1
-
-set timeout -1
-spawn vncserver
-match_max 100000
-expect "Password:"
-send -- "99623689\r"
-expect "Verify:"
-send -- "99623689\r"
-expect "Would you like to enter a view-only password (y/n)?"
-send -- "n\r"
-expect eof
-
+vncserver
 sleep 5
 vncserver -kill :1
 
