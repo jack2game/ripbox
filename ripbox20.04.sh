@@ -1,4 +1,5 @@
 #!/bin/bash
+
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install software-properties-common
@@ -6,7 +7,19 @@ sudo apt-get -y install nano
 sudo apt-get -y install expect
 sudo apt-get -y install expect-dev
 sudo apt update
-sudo expect -f https://github.com/jack2game/ripbox/raw/master/xfce4.sh
+
+/usr/bin/expect -c '
+set timeout -1
+spawn sudo apt -y install xfce4 xfce4-goodies
+expect "Country of origin for the keyboard:"
+send -- "31\r"
+expect "Keyboard layout:"
+send -- "1\r"
+expect "Default display manager:"
+send -- "1\r"
+expect eof
+'
+
 sudo apt -y install tightvncserver
 touch ~/.Xresources
 vncserver -kill :1
