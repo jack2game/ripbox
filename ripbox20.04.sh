@@ -74,7 +74,7 @@ sudo apt-get -y install fdkaac
 /usr/bin/expect -c '	
 set timeout -1	
 spawn sudo update-alternatives --config x-terminal-emulator	
-expect "Press <enter> to keep the current choice[*], or type selection number:"	
+expect "type selection number:"	
 send -- "2\r"	
 expect eof	
 '
