@@ -73,7 +73,9 @@ sudo apt-get -y install fdkaac
 
 mkdir ~/.config/rclone/
 cp ~/rclone.conf ~/.config/rclone/
-rclone copy remote1:/RexBackup/EncodeLinux/ ~/Desktop/Encode/ --verbose
+rclone copyto 'remote0_crypt:/Software/!Encode/Encode.7z' ~/Desktop/Encode.7z --verbose
+7z x ~/Desktop/Encode.7z
+rm ~/Desktop/Encode.7z
 sudo chmod +x ~/Desktop/Encode/BDSup2Sub512/BDSup2Sub512.jar
 
 sudo apt -y install firefox
