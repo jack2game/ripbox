@@ -2,15 +2,19 @@
 #sudo apt-get -y upgrade
 #sudo apt-get -y install software-properties-common
 #sudo apt-get -y install nano
-sudo apt update
-sudo apt -y install xfce4 xfce4-goodies
-expect "Country of origin for the keyboard: " { send "31\r" }
-expect "Keyboard layout: " { send "1\r" }
-expect "Default display manager: " { send "1\r" }
+#sudo apt update
 sudo apt -y install tightvncserver
 touch ~/.Xresources
 vncserver -kill :1
-echo "99623689 99623689 N" | vncserver
+
+vncserver
+expect "Password: "
+send "99623689"
+expect "Verify:   "
+send "99623689"
+expect "Would you like to enter a view-only password (y/n)? "
+send "n"
+
 sleep 5
 vncserver -kill :1
 
