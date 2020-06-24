@@ -1,4 +1,3 @@
-#!/bin/bash
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install software-properties-common
@@ -6,7 +5,7 @@ sudo apt-get -y install nano
 sudo apt-get -y install expect
 sudo apt-get -y install expect-dev
 sudo apt update
-sudo apt -y install xfce4 xfce4-goodies
+sudo expect https://github.com/jack2game/ripbox/raw/master/xfce4.expect
 sudo apt -y install tightvncserver
 touch ~/.Xresources
 vncserver -kill :1
