@@ -7,9 +7,9 @@ sudo apt -y install tightvncserver
 touch ~/.Xresources
 vncserver -kill :1
 vncserver
-expect "Password:" { send "99623689\r" }
-expect "Verify:" { send "99623689\r" }
-expect "Would you like to enter a view-only password (y/n)?" { send "n\r" }
+expect "Password: " { send "99623689\r" }
+expect "Verify:   " { send "99623689\r" }
+expect "Would you like to enter a view-only password (y/n)? " { send "n\r" }
 sleep 5
 vncserver -kill :1
 
