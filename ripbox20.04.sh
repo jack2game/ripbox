@@ -20,6 +20,14 @@ send -- "1\r"
 expect eof
 '
 
+/usr/bin/expect -c '
+set timeout -1
+spawn sudo update-alternatives --config x-terminal-emulator
+expect "Press <enter> to keep the current choice[*], or type selection number:"
+send -- "2\r"
+expect eof
+'
+
 sudo apt -y install tightvncserver
 touch ~/.Xresources
 vncserver -kill :1
@@ -64,12 +72,16 @@ sudo apt-get -y install libhunspell-dev
 sudo apt-get -y install libmpv-dev
 sudo apt-get -y install tesseract-ocr
 sudo apt-get -y install ffmpeg
-mkdir ~/.config/rclone/
-cp ~/rclone.conf ~/.config/rclone/
-rclone copy remote1:/RexBackup/EncodeLinux/ ~/Desktop/Encode/ --verbose
 sudo dpkg --add-architecture i386
 wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
 sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
 sudo apt -y install --install-recommends winehq-stable
+sudo apt-get -y install libopus-dev libopus0 opus-tools
+sudo apt-get -y install fdkaac
 
+mkdir ~/.config/rclone/
+cp ~/rclone.conf ~/.config/rclone/
+rclone copy remote1:/RexBackup/EncodeLinux/ ~/Desktop/Encode/ --verbose
+
+sudo apt -y install firefox
 sudo apt -y autoremove
