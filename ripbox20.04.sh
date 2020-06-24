@@ -6,7 +6,7 @@ sudo apt-get -y install nano
 sudo apt-get -y install expect
 sudo apt-get -y install expect-dev
 sudo apt update
-sudo expect -f https://github.com/jack2game/ripbox/raw/master/xfce4.expect
+sudo expect -f https://github.com/jack2game/ripbox/raw/master/xfce4.sh
 sudo apt -y install tightvncserver
 touch ~/.Xresources
 vncserver -kill :1
