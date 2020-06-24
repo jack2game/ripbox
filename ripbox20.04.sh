@@ -80,9 +80,9 @@ sudo apt -y install firefox
 sudo apt -y autoremove
 
 /usr/bin/expect -c '
+set timeout -1
 spawn sudo update-alternatives --config x-terminal-emulator
-match_max 100000
 expect "type selection number:"
 send -- "2\r"
 expect eof
-/
+'
