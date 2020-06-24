@@ -1,0 +1,6 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+spawn sudo apt -y install xfce4 xfce4-goodies
+expect ""
+send -- "Im Adam\r"
