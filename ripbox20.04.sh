@@ -6,7 +6,8 @@ sudo apt-get -y install software-properties-common
 sudo apt-get -y install nano
 sudo apt-get -y install expect
 sudo apt-get -y install expect-dev
-sudo apt update
+sudo apt -y update
+sudo apt -y upgrade
 
 /usr/bin/expect -c '
 set timeout -1
@@ -48,16 +49,13 @@ EOF
 vncserver -geometry 1920x1080
 sudo curl https://rclone.org/install.sh | sudo bash
 sudo add-apt-repository ppa:stebbins/handbrake-releases -y
-sudo apt-get -y update
 sudo apt-get -y install handbrake-gtk
 sudo apt-get -y install handbrake-cli
 sudo apt-get -y install mediainfo-gui
 sudo apt-get -y install mediainfo
 sudo wget -q -O - https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt | sudo apt-key add -
-sudo apt update
 sudo apt -y install mkvtoolnix mkvtoolnix-gui
 sudo add-apt-repository ppa:videolan/master-daily -y
-sudo apt update
 sudo apt -y install vlc
 sudo apt-get -y install mono-complete
 sudo apt-get -y install libhunspell-dev
