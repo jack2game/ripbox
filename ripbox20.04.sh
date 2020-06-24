@@ -20,14 +20,6 @@ send -- "1\r"
 expect eof
 '
 
-/usr/bin/expect -c '
-set timeout -1
-spawn sudo update-alternatives --config x-terminal-emulator
-expect "Press <enter> to keep the current choice[*], or type selection number:"
-send -- "2\r"
-expect eof
-'
-
 sudo apt -y install tightvncserver
 touch ~/.Xresources
 vncserver -kill :1
@@ -78,6 +70,14 @@ sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal mai
 sudo apt -y install --install-recommends winehq-stable
 sudo apt-get -y install libopus-dev libopus0 opus-tools
 sudo apt-get -y install fdkaac
+
+/usr/bin/expect -c '
+set timeout -1
+spawn sudo update-alternatives --config x-terminal-emulator
+expect "Press <enter> to keep the current choice[*], or type selection number:"
+send -- "2\r"
+expect eof
+'
 
 mkdir ~/.config/rclone/
 cp ~/rclone.conf ~/.config/rclone/
