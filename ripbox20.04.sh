@@ -6,7 +6,9 @@ sudo apt-get -y install expect
 sudo apt-get -y install expect-dev
 sudo apt update
 
+set timeout -1
 spawn sudo apt install xfce4 xfce4-goodies
+match_max 100000
 expect "Do you want to continue?"
 send -- "y\r"
 expect "Country of origin for the keyboard:"
@@ -21,7 +23,9 @@ sudo apt -y install tightvncserver
 touch ~/.Xresources
 vncserver -kill :1
 
+set timeout -1
 spawn vncserver
+match_max 100000
 expect "Password:"
 send -- "99623689\r"
 expect "Verify:"
