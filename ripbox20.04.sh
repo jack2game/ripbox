@@ -10,6 +10,7 @@ sudo apt-get -y install autocutsel
 sudo apt -y update
 sudo apt -y upgrade
 
+## Install desktop
 /usr/bin/expect -c '
 set timeout -1
 spawn sudo apt -y install xfce4 xfce4-goodies
@@ -22,6 +23,7 @@ send -- "1\r"
 expect eof
 '
 
+## Install vncserver
 sudo apt -y install tightvncserver
 touch ~/.Xresources
 vncserver -kill :1
@@ -49,38 +51,61 @@ startxfce4 &
 EOF
 
 vncserver -geometry 1920x1080
+
 sudo curl https://rclone.org/install.sh | sudo bash
+
+## Install handbrake
 sudo add-apt-repository ppa:stebbins/handbrake-releases -y
 sudo apt-get -y install handbrake-gtk
 sudo apt-get -y install handbrake-cli
+
+## Install media info
 sudo apt-get -y install mediainfo-gui
 sudo apt-get -y install mediainfo
+
+## Install mkvtoolnix
 sudo wget -q -O - https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt | sudo apt-key add -
 sudo apt -y install mkvtoolnix mkvtoolnix-gui
+
+## Install vlc
 sudo add-apt-repository ppa:videolan/master-daily -y
 sudo apt -y install vlc
+
+## Install some dependensies
 sudo apt-get -y install mono-complete
 sudo apt-get -y install libhunspell-dev
 sudo apt-get -y install libmpv-dev
 sudo apt-get -y install tesseract-ocr
 sudo apt-get -y install ffmpeg
+
+## Install wine
 sudo dpkg --add-architecture i386
 wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
 sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
 sudo apt -y install --install-recommends winehq-stable
+
+## Install some audio codec
 sudo apt-get -y install libopus-dev libopus0 opus-tools
 sudo apt-get -y install fdkaac
 
+## Install mkv-extractor-gui
+sudo add-apt-repository ppa:hizo/mkv-extractor-gui
+sudo apt-get update
+sudo apt-get install mkv-extractor-gui
+
+## Grab Encode Software
 mkdir ~/.config/rclone/
 cp ~/rclone.conf ~/.config/rclone/
-rclone copyto 'remote0_crypt:/Software/!Encode/Encode.7z' ~/Desktop/Encode.7z --verbose
+rclone copyto 'remote0:/RexShare/Encode/Encode.7z' ~/Desktop/Encode.7z --verbose
 7z x ~/Desktop/Encode.7z
 rm ~/Desktop/Encode.7z
-sudo chmod +x ~/Desktop/Encode/BDSup2Sub512/BDSup2Sub512.jar
 
 sudo apt -y install firefox
+
+## Clean Up
 sudo apt -y autoremove
 
+## Change Default Terminal
 /usr/bin/expect -c '
 set timeout -1
 spawn sudo update-alternatives --config x-terminal-emulator
