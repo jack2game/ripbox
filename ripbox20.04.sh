@@ -89,7 +89,7 @@ sudo apt-get -y install libopus-dev libopus0 opus-tools
 sudo apt-get -y install fdkaac
 
 ## Install mkv-extractor-gui
-sudo add-apt-repository ppa:hizo/mkv-extractor-gui
+sudo add-apt-repository ppa:hizo/mkv-extractor-gui -y
 sudo apt-get update
 sudo apt-get install mkv-extractor-gui
 
