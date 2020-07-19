@@ -94,11 +94,11 @@ sudo apt-get -y update
 sudo apt-get -y install mkv-extractor-qt5
 
 ## Grab Encode Software
-mkdir ~/.config/rclone/
-cp ~/rclone.conf ~/.config/rclone/
-rclone copyto 'remote0:/RexShare/Encode/Encode.7z' ~/Desktop/Encode.7z --verbose
-7z x ~/Desktop/Encode.7z
-rm ~/Desktop/Encode.7z
+mkdir /home/rex_txt/.config/rclone/
+cp /home/rex_txt/rclone.conf /home/rex_txt/.config/rclone/
+rclone copyto 'remote0:/RexShare/Encode/Encode.7z' /home/rex_txt/Desktop/Encode.7z --verbose
+7z x -y /home/rex_txt/Desktop/Encode.7z -o/home/rex_txt/Desktop/Encode/
+rm /home/rex_txt/Desktop/Encode.7z
 
 sudo apt -y install firefox
 
