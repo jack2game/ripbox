@@ -1,6 +1,8 @@
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install p7zip-full
+sudo apt-get -y install screen
+screen
 sudo curl https://rclone.org/install.sh | sudo bash
 mkdir /home/rex_txt/.config/
 mkdir /home/rex_txt/.config/rclone/
