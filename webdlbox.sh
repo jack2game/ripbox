@@ -14,3 +14,4 @@ sudo wget -P /usr/local/bin/ https://raw.githubusercontent.com/jack2game/ripbox/
 chmod a+x /usr/local/bin/jietu
 mkdir /home/webdlbox/
 mkdir /home/webdlbox/Workspace/
+rclone config file
