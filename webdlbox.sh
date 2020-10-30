@@ -6,6 +6,8 @@ sudo curl https://rclone.org/install.sh | sudo bash
 sudo apt-get -y install python3-pip
 sudo apt-get -y install python3-numpy
 sudo apt-get -y install ffmpeg
+sudo apt-get -y install zip
+sudo apt-get -y install unzip
 sudo wget -q -O - https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt | sudo apt-key add -
 sudo apt-get -y install mkvtoolnix mkvtoolnix-gui mediainfo
 sudo pip3 install --upgrade youtube_dl
