@@ -13,5 +13,8 @@ sudo pip3 install dottorrent-cli
 sudo wget -P /usr/local/bin/ https://raw.githubusercontent.com/jack2game/ripbox/master/jietu
 chmod a+x /usr/local/bin/jietu
 mkdir /home/webdlbox/
+sudo wget -P /home/webdlbox/ https://github.com/jack2game/ripbox/raw/master/rclone21.zip
+unzip /home/webdlbox/rclone21.zip -d /usr/local/bin/
+chmod a+x /usr/local/bin/rclone21
 mkdir /home/webdlbox/Workspace/
 rclone config file
