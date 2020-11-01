@@ -7,7 +7,7 @@
 # If you would like to change the output path,
 # sets CustomedOutput=1，then write your output path to OUTPUT
 CustomedOutput=1
-OUTPUT="$PWD/screenshots"
+OUTPUT="$PWD/ss_""$1"
 mkdir "$OUTPUT"
 # --------------------------------------------------------------------------------
 pics=10
