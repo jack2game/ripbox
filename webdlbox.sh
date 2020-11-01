@@ -23,3 +23,4 @@ unzip /home/webdlbox/rclone21.zip -d /usr/local/bin/
 chmod a+x /usr/local/bin/rclone21
 mkdir /home/webdlbox/Workspace/
 rclone config file
+bubblegum config
