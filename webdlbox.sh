@@ -14,6 +14,7 @@ sudo wget -q -O - https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt | sudo ap
 sudo apt-get -y install mkvtoolnix mkvtoolnix-gui mediainfo
 sudo pip3 install --upgrade youtube_dl
 sudo pip3 install --upgrade dottorrent-cli
+sudo pip3 install --upgrade imgbox-cli
 sudo wget -P /usr/local/bin/ https://raw.githubusercontent.com/jack2game/ripbox/master/jietu
 chmod a+x /usr/local/bin/jietu
 mkdir /home/webdlbox/
